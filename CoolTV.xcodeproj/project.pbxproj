@@ -12,6 +12,7 @@
 		031BD7A223CC9D0B00CB58F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031BD7A023CC9D0B00CB58F2 /* Main.storyboard */; };
 		031BD7A423CC9D0F00CB58F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031BD7A323CC9D0F00CB58F2 /* Assets.xcassets */; };
 		031BD7A723CC9D0F00CB58F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031BD7A523CC9D0F00CB58F2 /* LaunchScreen.storyboard */; };
+		03C8FAEC23CCB7010039A011 /* 北京移动IPTV.m3u in Resources */ = {isa = PBXBuildFile; fileRef = 03C8FAEB23CCB7010039A011 /* 北京移动IPTV.m3u */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		031BD7A323CC9D0F00CB58F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		031BD7A623CC9D0F00CB58F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		031BD7A823CC9D0F00CB58F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03C8FAEB23CCB7010039A011 /* 北京移动IPTV.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "北京移动IPTV.m3u"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,17 @@
 				031BD7A323CC9D0F00CB58F2 /* Assets.xcassets */,
 				031BD7A523CC9D0F00CB58F2 /* LaunchScreen.storyboard */,
 				031BD7A823CC9D0F00CB58F2 /* Info.plist */,
+				03C8FAEA23CCB6ED0039A011 /* m3u */,
 			);
 			path = CoolTV;
+			sourceTree = "<group>";
+		};
+		03C8FAEA23CCB6ED0039A011 /* m3u */ = {
+			isa = PBXGroup;
+			children = (
+				03C8FAEB23CCB7010039A011 /* 北京移动IPTV.m3u */,
+			);
+			path = m3u;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C8FAEC23CCB7010039A011 /* 北京移动IPTV.m3u in Resources */,
 				031BD7A723CC9D0F00CB58F2 /* LaunchScreen.storyboard in Resources */,
 				031BD7A423CC9D0F00CB58F2 /* Assets.xcassets in Resources */,
 				031BD7A223CC9D0B00CB58F2 /* Main.storyboard in Resources */,
