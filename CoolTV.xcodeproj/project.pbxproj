@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		031BD79923CC9D0B00CB58F2 /* CoolTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		031BD79923CC9D0B00CB58F2 /* 酷TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "酷TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		031BD79C23CC9D0B00CB58F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		031BD79E23CC9D0B00CB58F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		031BD7A123CC9D0B00CB58F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		031BD79A23CC9D0B00CB58F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				031BD79923CC9D0B00CB58F2 /* CoolTV.app */,
+				031BD79923CC9D0B00CB58F2 /* 酷TV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,7 +107,7 @@
 			);
 			name = CoolTV;
 			productName = CoolTV;
-			productReference = 031BD79923CC9D0B00CB58F2 /* CoolTV.app */;
+			productReference = 031BD79923CC9D0B00CB58F2 /* 酷TV.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -320,9 +320,10 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.swing.CoolTV;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "酷TV";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
 			};
 			name = Debug;
 		};
@@ -338,9 +339,10 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.swing.CoolTV;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "酷TV";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
 			};
 			name = Release;
 		};
