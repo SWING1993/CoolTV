@@ -12,7 +12,12 @@
 		031BD7A223CC9D0B00CB58F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031BD7A023CC9D0B00CB58F2 /* Main.storyboard */; };
 		031BD7A423CC9D0F00CB58F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031BD7A323CC9D0F00CB58F2 /* Assets.xcassets */; };
 		031BD7A723CC9D0F00CB58F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031BD7A523CC9D0F00CB58F2 /* LaunchScreen.storyboard */; };
-		03C8FAEC23CCB7010039A011 /* 北京移动IPTV.m3u in Resources */ = {isa = PBXBuildFile; fileRef = 03C8FAEB23CCB7010039A011 /* 北京移动IPTV.m3u */; };
+		163C2C7823CDA394007C94D0 /* SWChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163C2C7723CDA394007C94D0 /* SWChannelCell.swift */; };
+		163C2C7A23CDA8CD007C94D0 /* CIBN官方频道.txt in Resources */ = {isa = PBXBuildFile; fileRef = 163C2C7923CDA8CD007C94D0 /* CIBN官方频道.txt */; };
+		163C2C7C23CDA8DD007C94D0 /* 影视轮播频道.txt in Resources */ = {isa = PBXBuildFile; fileRef = 163C2C7B23CDA8DD007C94D0 /* 影视轮播频道.txt */; };
+		163C2C7E23CDACA6007C94D0 /* 地方高清频道.txt in Resources */ = {isa = PBXBuildFile; fileRef = 163C2C7D23CDACA6007C94D0 /* 地方高清频道.txt */; };
+		164D376823CD86080088BDE4 /* SWAVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D376723CD86080088BDE4 /* SWAVPlayerViewController.swift */; };
+		164D376A23CD8E830088BDE4 /* 央视高清频道.txt in Resources */ = {isa = PBXBuildFile; fileRef = 164D376923CD8E830088BDE4 /* 央视高清频道.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +28,12 @@
 		031BD7A323CC9D0F00CB58F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		031BD7A623CC9D0F00CB58F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		031BD7A823CC9D0F00CB58F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03C8FAEB23CCB7010039A011 /* 北京移动IPTV.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "北京移动IPTV.m3u"; sourceTree = "<group>"; };
+		163C2C7723CDA394007C94D0 /* SWChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWChannelCell.swift; sourceTree = "<group>"; };
+		163C2C7923CDA8CD007C94D0 /* CIBN官方频道.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "CIBN官方频道.txt"; sourceTree = "<group>"; };
+		163C2C7B23CDA8DD007C94D0 /* 影视轮播频道.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "影视轮播频道.txt"; sourceTree = "<group>"; };
+		163C2C7D23CDACA6007C94D0 /* 地方高清频道.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "地方高清频道.txt"; sourceTree = "<group>"; };
+		164D376723CD86080088BDE4 /* SWAVPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAVPlayerViewController.swift; sourceTree = "<group>"; };
+		164D376923CD8E830088BDE4 /* 央视高清频道.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "央视高清频道.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,21 +68,26 @@
 			children = (
 				031BD79C23CC9D0B00CB58F2 /* AppDelegate.swift */,
 				031BD79E23CC9D0B00CB58F2 /* ViewController.swift */,
+				163C2C7723CDA394007C94D0 /* SWChannelCell.swift */,
+				164D376723CD86080088BDE4 /* SWAVPlayerViewController.swift */,
 				031BD7A023CC9D0B00CB58F2 /* Main.storyboard */,
 				031BD7A323CC9D0F00CB58F2 /* Assets.xcassets */,
 				031BD7A523CC9D0F00CB58F2 /* LaunchScreen.storyboard */,
 				031BD7A823CC9D0F00CB58F2 /* Info.plist */,
-				03C8FAEA23CCB6ED0039A011 /* m3u */,
+				03C8FAEA23CCB6ED0039A011 /* data */,
 			);
 			path = CoolTV;
 			sourceTree = "<group>";
 		};
-		03C8FAEA23CCB6ED0039A011 /* m3u */ = {
+		03C8FAEA23CCB6ED0039A011 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				03C8FAEB23CCB7010039A011 /* 北京移动IPTV.m3u */,
+				164D376923CD8E830088BDE4 /* 央视高清频道.txt */,
+				163C2C7D23CDACA6007C94D0 /* 地方高清频道.txt */,
+				163C2C7923CDA8CD007C94D0 /* CIBN官方频道.txt */,
+				163C2C7B23CDA8DD007C94D0 /* 影视轮播频道.txt */,
 			);
-			path = m3u;
+			path = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,9 +148,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03C8FAEC23CCB7010039A011 /* 北京移动IPTV.m3u in Resources */,
+				163C2C7A23CDA8CD007C94D0 /* CIBN官方频道.txt in Resources */,
 				031BD7A723CC9D0F00CB58F2 /* LaunchScreen.storyboard in Resources */,
 				031BD7A423CC9D0F00CB58F2 /* Assets.xcassets in Resources */,
+				163C2C7C23CDA8DD007C94D0 /* 影视轮播频道.txt in Resources */,
+				164D376A23CD8E830088BDE4 /* 央视高清频道.txt in Resources */,
+				163C2C7E23CDACA6007C94D0 /* 地方高清频道.txt in Resources */,
 				031BD7A223CC9D0B00CB58F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +166,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				031BD79F23CC9D0B00CB58F2 /* ViewController.swift in Sources */,
+				163C2C7823CDA394007C94D0 /* SWChannelCell.swift in Sources */,
+				164D376823CD86080088BDE4 /* SWAVPlayerViewController.swift in Sources */,
 				031BD79D23CC9D0B00CB58F2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
