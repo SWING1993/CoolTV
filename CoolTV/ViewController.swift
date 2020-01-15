@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         checkActivate()
-        setupLoadLocalData()
+        setupLoadData()
     }
 
     func play(url: URL) {
@@ -43,6 +43,7 @@ class ViewController: UIViewController {
     }
     
     func setupLoadData() {
+        setupLoadLocalData()
         AF.request("http://106.54.209.203:8080/").responseJSON { response in
             switch response.result {
             case .success:
