@@ -18,6 +18,25 @@
 		1676C30B23CF08630084E1BD /* 卫视高清频道.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1676C30723CF08630084E1BD /* 卫视高清频道.txt */; };
 		1676C30C23CF08630084E1BD /* 央视高清频道.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1676C30823CF08630084E1BD /* 央视高清频道.txt */; };
 		1676C30D23CF08630084E1BD /* 爱奇艺影视轮播.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1676C30923CF08630084E1BD /* 爱奇艺影视轮播.txt */; };
+		1676C32223CF08E80084E1BD /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C30F23CF08E70084E1BD /* TaskDelegate.swift */; };
+		1676C32323CF08E80084E1BD /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C31023CF08E70084E1BD /* MultipartFormData.swift */; };
+		1676C32423CF08E80084E1BD /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C31123CF08E70084E1BD /* NetworkReachabilityManager.swift */; };
+		1676C32523CF08E80084E1BD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1676C31223CF08E80084E1BD /* LICENSE */; };
+		1676C32623CF08E80084E1BD /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C31323CF08E80084E1BD /* Timeline.swift */; };
+		1676C32723CF08E80084E1BD /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C31423CF08E80084E1BD /* DispatchQueue+Alamofire.swift */; };
+		1676C32823CF08E80084E1BD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C31523CF08E80084E1BD /* Result.swift */; };
+		1676C32923CF08E80084E1BD /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C31623CF08E80084E1BD /* ParameterEncoding.swift */; };
+		1676C32A23CF08E80084E1BD /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C31723CF08E80084E1BD /* AFError.swift */; };
+		1676C32B23CF08E80084E1BD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1676C31823CF08E80084E1BD /* README.md */; };
+		1676C32C23CF08E80084E1BD /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C31923CF08E80084E1BD /* Validation.swift */; };
+		1676C32D23CF08E80084E1BD /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C31A23CF08E80084E1BD /* Notifications.swift */; };
+		1676C32E23CF08E80084E1BD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C31B23CF08E80084E1BD /* Response.swift */; };
+		1676C32F23CF08E80084E1BD /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C31C23CF08E80084E1BD /* Alamofire.swift */; };
+		1676C33023CF08E80084E1BD /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C31D23CF08E80084E1BD /* Request.swift */; };
+		1676C33123CF08E80084E1BD /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C31E23CF08E80084E1BD /* SessionManager.swift */; };
+		1676C33223CF08E80084E1BD /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C31F23CF08E80084E1BD /* ResponseSerialization.swift */; };
+		1676C33323CF08E80084E1BD /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C32023CF08E80084E1BD /* ServerTrustPolicy.swift */; };
+		1676C33423CF08E80084E1BD /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676C32123CF08E80084E1BD /* SessionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +53,25 @@
 		1676C30723CF08630084E1BD /* 卫视高清频道.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "卫视高清频道.txt"; sourceTree = "<group>"; };
 		1676C30823CF08630084E1BD /* 央视高清频道.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "央视高清频道.txt"; sourceTree = "<group>"; };
 		1676C30923CF08630084E1BD /* 爱奇艺影视轮播.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "爱奇艺影视轮播.txt"; sourceTree = "<group>"; };
+		1676C30F23CF08E70084E1BD /* TaskDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
+		1676C31023CF08E70084E1BD /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		1676C31123CF08E70084E1BD /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		1676C31223CF08E80084E1BD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		1676C31323CF08E80084E1BD /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		1676C31423CF08E80084E1BD /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		1676C31523CF08E80084E1BD /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		1676C31623CF08E80084E1BD /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		1676C31723CF08E80084E1BD /* AFError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
+		1676C31823CF08E80084E1BD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1676C31923CF08E80084E1BD /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		1676C31A23CF08E80084E1BD /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		1676C31B23CF08E80084E1BD /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		1676C31C23CF08E80084E1BD /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		1676C31D23CF08E80084E1BD /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		1676C31E23CF08E80084E1BD /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		1676C31F23CF08E80084E1BD /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		1676C32023CF08E80084E1BD /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		1676C32123CF08E80084E1BD /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +108,7 @@
 				031BD79E23CC9D0B00CB58F2 /* ViewController.swift */,
 				163C2C7723CDA394007C94D0 /* SWChannelCell.swift */,
 				164D376723CD86080088BDE4 /* SWAVPlayerViewController.swift */,
+				1676C30E23CF08E70084E1BD /* Alamofire */,
 				031BD7A023CC9D0B00CB58F2 /* Main.storyboard */,
 				031BD7A323CC9D0F00CB58F2 /* Assets.xcassets */,
 				031BD7A523CC9D0F00CB58F2 /* LaunchScreen.storyboard */,
@@ -88,6 +127,32 @@
 				1676C30823CF08630084E1BD /* 央视高清频道.txt */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		1676C30E23CF08E70084E1BD /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				1676C31723CF08E80084E1BD /* AFError.swift */,
+				1676C31C23CF08E80084E1BD /* Alamofire.swift */,
+				1676C31423CF08E80084E1BD /* DispatchQueue+Alamofire.swift */,
+				1676C31223CF08E80084E1BD /* LICENSE */,
+				1676C31023CF08E70084E1BD /* MultipartFormData.swift */,
+				1676C31123CF08E70084E1BD /* NetworkReachabilityManager.swift */,
+				1676C31A23CF08E80084E1BD /* Notifications.swift */,
+				1676C31623CF08E80084E1BD /* ParameterEncoding.swift */,
+				1676C31823CF08E80084E1BD /* README.md */,
+				1676C31D23CF08E80084E1BD /* Request.swift */,
+				1676C31B23CF08E80084E1BD /* Response.swift */,
+				1676C31F23CF08E80084E1BD /* ResponseSerialization.swift */,
+				1676C31523CF08E80084E1BD /* Result.swift */,
+				1676C32023CF08E80084E1BD /* ServerTrustPolicy.swift */,
+				1676C32123CF08E80084E1BD /* SessionDelegate.swift */,
+				1676C31E23CF08E80084E1BD /* SessionManager.swift */,
+				1676C30F23CF08E70084E1BD /* TaskDelegate.swift */,
+				1676C31323CF08E80084E1BD /* Timeline.swift */,
+				1676C31923CF08E80084E1BD /* Validation.swift */,
+			);
+			path = Alamofire;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +215,11 @@
 			files = (
 				031BD7A723CC9D0F00CB58F2 /* LaunchScreen.storyboard in Resources */,
 				1676C30A23CF08630084E1BD /* 虎牙影视轮播.txt in Resources */,
+				1676C32523CF08E80084E1BD /* LICENSE in Resources */,
 				1676C30B23CF08630084E1BD /* 卫视高清频道.txt in Resources */,
 				031BD7A423CC9D0F00CB58F2 /* Assets.xcassets in Resources */,
 				031BD7A223CC9D0B00CB58F2 /* Main.storyboard in Resources */,
+				1676C32B23CF08E80084E1BD /* README.md in Resources */,
 				1676C30D23CF08630084E1BD /* 爱奇艺影视轮播.txt in Resources */,
 				1676C30C23CF08630084E1BD /* 央视高清频道.txt in Resources */,
 			);
@@ -165,8 +232,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1676C32623CF08E80084E1BD /* Timeline.swift in Sources */,
+				1676C32423CF08E80084E1BD /* NetworkReachabilityManager.swift in Sources */,
+				1676C33123CF08E80084E1BD /* SessionManager.swift in Sources */,
+				1676C32323CF08E80084E1BD /* MultipartFormData.swift in Sources */,
+				1676C32723CF08E80084E1BD /* DispatchQueue+Alamofire.swift in Sources */,
+				1676C32E23CF08E80084E1BD /* Response.swift in Sources */,
+				1676C33423CF08E80084E1BD /* SessionDelegate.swift in Sources */,
+				1676C32C23CF08E80084E1BD /* Validation.swift in Sources */,
+				1676C33323CF08E80084E1BD /* ServerTrustPolicy.swift in Sources */,
+				1676C32223CF08E80084E1BD /* TaskDelegate.swift in Sources */,
+				1676C33023CF08E80084E1BD /* Request.swift in Sources */,
+				1676C32A23CF08E80084E1BD /* AFError.swift in Sources */,
+				1676C32923CF08E80084E1BD /* ParameterEncoding.swift in Sources */,
+				1676C32D23CF08E80084E1BD /* Notifications.swift in Sources */,
+				1676C32F23CF08E80084E1BD /* Alamofire.swift in Sources */,
 				031BD79F23CC9D0B00CB58F2 /* ViewController.swift in Sources */,
+				1676C32823CF08E80084E1BD /* Result.swift in Sources */,
 				163C2C7823CDA394007C94D0 /* SWChannelCell.swift in Sources */,
+				1676C33223CF08E80084E1BD /* ResponseSerialization.swift in Sources */,
 				164D376823CD86080088BDE4 /* SWAVPlayerViewController.swift in Sources */,
 				031BD79D23CC9D0B00CB58F2 /* AppDelegate.swift in Sources */,
 			);
