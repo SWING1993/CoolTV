@@ -72,8 +72,6 @@ class ViewController: UIViewController {
         let item = AVPlayerItem.init(url: url)
         let avPlayerViewController = SWAVPlayerViewController()
         avPlayerViewController.player = AVPlayer.init(playerItem: item)
-        avPlayerViewController.videoGravity = .resize
-        avPlayerViewController.player?.play()
         self.present(avPlayerViewController, animated: true, completion: nil)
     }
     
@@ -105,18 +103,25 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     // 填充每个cell的内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        cell.textLabel?.textColor = .white
         cell.textLabel?.text = resources[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
     }
     
     func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        //        if let prevIndexPath = context.previouslyFocusedIndexPath {
-        //        }
+        if let prevIndexPath = context.previouslyFocusedIndexPath {
+            if let cell = tableView.cellForRow(at: prevIndexPath) {
+                cell.textLabel?.textColor = .white
+            }
+        }
         if let nextIndexPath = context.nextFocusedIndexPath {
+            if let cell = tableView.cellForRow(at: nextIndexPath) {
+                cell.textLabel?.textColor = .black
+            }
             self.setupLoadData(resource: self.resources[nextIndexPath.row])
         }
     }
@@ -160,10 +165,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             print(prevIndexPath)
             let cell: SWChannelCell = collectionView.cellForItem(at: prevIndexPath) as! SWChannelCell
             coordinator.addCoordinatedAnimations({
-              UIView.animate(withDuration: UIView.inheritedAnimationDuration) {
-                cell.backGroudView.backgroundColor = UIColor.tertiaryLabel
-                cell.channelLabel.textColor = .white
-              }
+                UIView.animate(withDuration: UIView.inheritedAnimationDuration) {
+                    cell.backGroudView.backgroundColor = UIColor.tertiaryLabel
+                    cell.channelLabel.textColor = .white
+                }
             }, completion: nil)
         }
         
@@ -172,10 +177,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             print(nextIndexPath)
             let cell: SWChannelCell = collectionView.cellForItem(at: nextIndexPath) as! SWChannelCell
             coordinator.addCoordinatedAnimations({
-              UIView.animate(withDuration: UIView.inheritedAnimationDuration) {
-                cell.backGroudView.backgroundColor = UIColor.white
-                cell.channelLabel.textColor = .black
-              }
+                UIView.animate(withDuration: UIView.inheritedAnimationDuration) {
+                    cell.backGroudView.backgroundColor = UIColor.white
+                    cell.channelLabel.textColor = .black
+                }
             }, completion: nil)
             
         }

@@ -16,12 +16,16 @@ class SWAVPlayerViewController: AVPlayerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.        
         
-        self.isPlaying = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action:#selector(tapped))
         tapRecognizer.allowedPressTypes = [NSNumber(value: UIPress.PressType.playPause.rawValue)];
         self.view.addGestureRecognizer(tapRecognizer)
+        
+        self.videoGravity = .resize
+        self.player?.play()
+        self.isPlaying = true
+        
     }
     
     @objc
