@@ -21,11 +21,8 @@ class SWAVPlayerViewController: AVPlayerViewController {
         let tapRecognizer = UITapGestureRecognizer(target: self, action:#selector(tapped))
         tapRecognizer.allowedPressTypes = [NSNumber(value: UIPress.PressType.playPause.rawValue)];
         self.view.addGestureRecognizer(tapRecognizer)
-        
         self.videoGravity = .resize
-        self.player?.play()
         self.isPlaying = true
-        
     }
     
     @objc
@@ -38,4 +35,5 @@ class SWAVPlayerViewController: AVPlayerViewController {
         }
         self.isPlaying = !self.isPlaying
     }
+
 }

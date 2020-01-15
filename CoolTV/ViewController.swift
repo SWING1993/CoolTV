@@ -8,6 +8,7 @@
 
 import UIKit
 import AVKit
+import TVUIKit
 
 class ViewController: UIViewController {
     
@@ -15,14 +16,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var activate = 0
     
-    var resources = ["央视高清频道", "地方高清频道", "CIBN官方频道", "影视轮播频道"]
+    var resources = ["央视高清频道", "卫视高清频道", "虎牙影视轮播", "爱奇艺影视轮播"]
     var channelNames: [String] = []
     var channelDataSourcce: [String: String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        checkActivate()
     }
     
     
@@ -72,6 +75,7 @@ class ViewController: UIViewController {
         let item = AVPlayerItem.init(url: url)
         let avPlayerViewController = SWAVPlayerViewController()
         avPlayerViewController.player = AVPlayer.init(playerItem: item)
+        avPlayerViewController.player?.play()
         self.present(avPlayerViewController, animated: true, completion: nil)
     }
     
@@ -84,6 +88,17 @@ class ViewController: UIViewController {
         alertController.show(self, sender: nil)
     }
     
+    func checkActivate() {
+        let installKey = "install_date"
+        let i = UserDefaults.standard.double(forKey: installKey)
+        if i > 0 {
+            let now = Date().timeIntervalSince1970
+            print(now - i)
+        } else {
+            let installdate = Date().timeIntervalSince1970
+            UserDefaults.standard.set(installdate, forKey: installKey)
+        }
+    }
 }
 
 
@@ -161,8 +176,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didUpdateFocusIn context: UICollectionViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         
         if let prevIndexPath = context.previouslyFocusedIndexPath {
-            print("prev")
-            print(prevIndexPath)
             let cell: SWChannelCell = collectionView.cellForItem(at: prevIndexPath) as! SWChannelCell
             coordinator.addCoordinatedAnimations({
                 UIView.animate(withDuration: UIView.inheritedAnimationDuration) {
@@ -173,8 +186,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         
         if let nextIndexPath = context.nextFocusedIndexPath {
-            print("next:")
-            print(nextIndexPath)
             let cell: SWChannelCell = collectionView.cellForItem(at: nextIndexPath) as! SWChannelCell
             coordinator.addCoordinatedAnimations({
                 UIView.animate(withDuration: UIView.inheritedAnimationDuration) {
@@ -182,7 +193,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
                     cell.channelLabel.textColor = .black
                 }
             }, completion: nil)
-            
         }
     }
     

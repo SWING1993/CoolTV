@@ -14,3 +14,4 @@ class SWChannelCell: UICollectionViewCell {
     @IBOutlet weak var channelLabel: UILabel!
     
 }
+
