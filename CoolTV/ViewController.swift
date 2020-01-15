@@ -212,7 +212,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             let cell: SWChannelCell = collectionView.cellForItem(at: prevIndexPath) as! SWChannelCell
             coordinator.addCoordinatedAnimations({
                 UIView.animate(withDuration: UIView.inheritedAnimationDuration) {
-                    cell.backGroudView.backgroundColor = UIColor.tertiaryLabel
+                    cell.backGroudView.backgroundColor = UIColor.init(displayP3Red: 60.0/255.0, green: 60.0/255.0, blue: 67.0/255.0, alpha: 0.3)
                     cell.channelLabel.textColor = .white
                 }
             }, completion: nil)
