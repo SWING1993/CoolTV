@@ -10,6 +10,14 @@ import UIKit
 
 class SWChannelModel: NSObject {
     
+    var title = ""
+    var subChannels: [SWSubChannelModel] = []
+
+}
+
+
+class SWSubChannelModel: NSObject {
+    
     var name = ""
     var url = ""
 

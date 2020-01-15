@@ -1,5 +1,5 @@
 //
-//  DispatchQueue+Alamofire.swift
+//  Alamofire.h
 //
 //  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
 //
@@ -22,16 +22,7 @@
 //  THE SOFTWARE.
 //
 
-import Dispatch
-import Foundation
+@import Foundation;
 
-extension DispatchQueue {
-    /// Execute the provided closure after a `TimeInterval`.
-    ///
-    /// - Parameters:
-    ///   - delay:   `TimeInterval` to delay execution.
-    ///   - closure: Closure to execute.
-    func after(_ delay: TimeInterval, execute closure: @escaping () -> Void) {
-        asyncAfter(deadline: .now() + delay, execute: closure)
-    }
-}
+FOUNDATION_EXPORT double AlamofireVersionNumber;
+FOUNDATION_EXPORT const unsigned char AlamofireVersionString[];

@@ -8,69 +8,24 @@
 
 import UIKit
 import AVKit
-import TVUIKit
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var activate = 0
-    
-    var resources = ["央视高清频道", "卫视高清频道", "虎牙影视轮播", "爱奇艺影视轮播"]
-    var channelNames: [String] = []
-    var channelDataSourcce: [String: String] = [:]
+
+    var didSelectRow = 0
+    var channels: [SWChannelModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         checkActivate()
+        setupLoadLocalData()
     }
-    
-    
-    func setupLoadData(resource: String) {
-        channelNames.removeAll()
-        channelDataSourcce.removeAll()
-        
-        let path = Bundle.main.path(forResource: resource, ofType: "txt")
-        let url = URL(fileURLWithPath: path!)
-        do {
-            let content = try NSString.init(contentsOf: url, encoding: String.Encoding.utf8.rawValue)
-            let array = content.components(separatedBy: "\n")
-            var titles: [String] = []
-            var urlStrings: [String] = []
-            for str in array {
-                if str.contains(",") {
-                    let item = str.components(separatedBy: ",")
-                    if let title = item.first {
-                        titles.append(title)
-                    }
-                    if let url = item.last {
-                        urlStrings.append(url)
-                    }
-                }
-            }
-            
-            for index in 0 ..< urlStrings.count {
-                let title = titles[index]
-                let urlString = urlStrings[index]
-                channelDataSourcce[title] = urlString
-                
-            }
-            
-            var names: [String] = []
-            for key in channelDataSourcce.keys {
-                names.append(key)
-            }
-            self.channelNames = names.sorted(by: <)
-            self.collectionView.reloadData()
-            self.collectionView.scrollToItem(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
-        } catch _ {
-            showAlert(title: "", message: "读取数据时出现错误")
-        }
-    }
-    
+
     func play(url: URL) {
         let item = AVPlayerItem.init(url: url)
         let avPlayerViewController = SWAVPlayerViewController()
@@ -79,13 +34,82 @@ class ViewController: UIViewController {
         self.present(avPlayerViewController, animated: true, completion: nil)
     }
     
-    
     func showAlert(title:String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
         }
         alertController.addAction(ok)
         alertController.show(self, sender: nil)
+    }
+    
+    func setupLoadData() {
+        AF.request("http://106.54.209.203:8080/").responseJSON { response in
+            switch response.result {
+            case .success:
+                if let dict: [String: String] = response.value as? [String : String] {
+                    debugPrint(dict.keys)
+                }
+            case let .failure(error):
+                debugPrint(error)
+            }
+        }
+    }
+    
+    func setupLoadLocalData() {
+        self.channels.removeAll()
+        let resources = ["央视高清频道", "卫视高清频道", "虎牙影视轮播", "爱奇艺影视轮播"]
+        for resource in resources {
+            let channelModel = SWChannelModel()
+            channelModel.title = resource
+            let path = Bundle.main.path(forResource: resource, ofType: "txt")
+            let url = URL(fileURLWithPath: path!)
+            do {
+                let content = try NSString.init(contentsOf: url, encoding: String.Encoding.utf8.rawValue)
+                let array = content.components(separatedBy: "\n")
+                var titles: [String] = []
+                var urlStrings: [String] = []
+                for str in array {
+                    if str.contains(",") {
+                        let item = str.components(separatedBy: ",")
+                        if let title = item.first {
+                            titles.append(title)
+                        }
+                        if let url = item.last {
+                            urlStrings.append(url)
+                        }
+                    }
+                }
+
+                var channelNames: [String] = []
+                var channelDataSourcce: [String: String] = [:]
+                for index in 0 ..< urlStrings.count {
+                    let title = titles[index]
+                    let urlString = urlStrings[index]
+                    channelDataSourcce[title] = urlString
+
+                }
+                var names: [String] = []
+                for key in channelDataSourcce.keys {
+                    names.append(key)
+                }
+                channelNames = names.sorted(by: <)
+                
+                var subChannelModels: [SWSubChannelModel] = []
+                for name in channelNames {
+                    let subChannelModel = SWSubChannelModel()
+                    subChannelModel.name = name
+                    if let url = channelDataSourcce[name] {
+                        subChannelModel.url = url
+                    }
+                    subChannelModels.append(subChannelModel)
+                }
+                channelModel.subChannels = subChannelModels
+            } catch _ {
+                showAlert(title: "", message: "读取数据时出现错误")
+            }
+            self.channels.append(channelModel)
+        }
+        self.tableView.reloadData()
     }
     
     func checkActivate() {
@@ -112,14 +136,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     // 每个section的cell数量
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.resources.count
+        return self.channels.count
     }
     
     // 填充每个cell的内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         cell.textLabel?.textColor = .white
-        cell.textLabel?.text = resources[indexPath.row]
+        let channel = channels[indexPath.row]
+        cell.textLabel?.text = channel.title
         return cell
     }
     
@@ -137,7 +162,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             if let cell = tableView.cellForRow(at: nextIndexPath) {
                 cell.textLabel?.textColor = .black
             }
-            self.setupLoadData(resource: self.resources[nextIndexPath.row])
+            self.didSelectRow = nextIndexPath.row
+            self.collectionView.reloadData()
+            self.collectionView.scrollToItem(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
         }
     }
 }
@@ -146,22 +173,27 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.channelNames.count
+        if channels.count > self.didSelectRow {
+            let channel = channels[self.didSelectRow]
+            return channel.subChannels.count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: SWChannelCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SWChannelCell
         cell.backGroudView.layer.cornerRadius = 8
-        cell.channelLabel.text = channelNames[indexPath.row]
+        let channel = channels[self.didSelectRow]
+        let subChannel = channel.subChannels[indexPath.row]
+        cell.channelLabel.text = subChannel.name
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let channelName = channelNames[indexPath.row]
-        if let urlString: String = channelDataSourcce[channelName] {
-            if let url = URL.init(string: urlString) {
-                play(url: url)
-            }
+        let channel = channels[self.didSelectRow]
+        let subChannel = channel.subChannels[indexPath.row]
+        if let url = URL.init(string: subChannel.url) {
+            play(url: url)
         }
     }
     
