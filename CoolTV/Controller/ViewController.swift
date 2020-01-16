@@ -80,7 +80,6 @@ class ViewController: UIViewController {
         self.tableView.reloadData()
     }
     
-    
     func formatxx(title: String, content: String) {
         let channelModel = SWChannelModel()
         channelModel.title = title

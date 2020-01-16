@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		031BD79D23CC9D0B00CB58F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031BD79C23CC9D0B00CB58F2 /* AppDelegate.swift */; };
-		031BD79F23CC9D0B00CB58F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031BD79E23CC9D0B00CB58F2 /* ViewController.swift */; };
 		031BD7A223CC9D0B00CB58F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031BD7A023CC9D0B00CB58F2 /* Main.storyboard */; };
 		031BD7A423CC9D0F00CB58F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031BD7A323CC9D0F00CB58F2 /* Assets.xcassets */; };
 		031BD7A723CC9D0F00CB58F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031BD7A523CC9D0F00CB58F2 /* LaunchScreen.storyboard */; };
-		163C2C7823CDA394007C94D0 /* SWChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163C2C7723CDA394007C94D0 /* SWChannelCell.swift */; };
 		163FCCB823CF0BE200D3647E /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163FCC9623CF0BE000D3647E /* HTTPHeaders.swift */; };
 		163FCCB923CF0BE200D3647E /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163FCC9723CF0BE000D3647E /* AFError.swift */; };
 		163FCCBA23CF0BE200D3647E /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163FCC9823CF0BE000D3647E /* MultipartFormData.swift */; };
@@ -45,8 +43,10 @@
 		163FCCD523CF0BE200D3647E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163FCCB423CF0BE200D3647E /* Session.swift */; };
 		163FCCD623CF0BE200D3647E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163FCCB523CF0BE200D3647E /* Response.swift */; };
 		163FCCD823CF0BE200D3647E /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163FCCB723CF0BE200D3647E /* URLSessionConfiguration+Alamofire.swift */; };
-		163FCCDA23CF101900D3647E /* SWChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163FCCD923CF101900D3647E /* SWChannelModel.swift */; };
-		164D376823CD86080088BDE4 /* SWAVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D376723CD86080088BDE4 /* SWAVPlayerViewController.swift */; };
+		163FCCE023D0025800D3647E /* SWAVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163FCCDE23D0025800D3647E /* SWAVPlayerViewController.swift */; };
+		163FCCE123D0025800D3647E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163FCCDF23D0025800D3647E /* ViewController.swift */; };
+		163FCCE323D0026200D3647E /* SWChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163FCCE223D0026200D3647E /* SWChannelCell.swift */; };
+		163FCCE523D0026C00D3647E /* SWChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163FCCE423D0026C00D3647E /* SWChannelModel.swift */; };
 		1676C30A23CF08630084E1BD /* 虎牙影视轮播.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1676C30623CF08630084E1BD /* 虎牙影视轮播.txt */; };
 		1676C30B23CF08630084E1BD /* 卫视高清频道.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1676C30723CF08630084E1BD /* 卫视高清频道.txt */; };
 		1676C30C23CF08630084E1BD /* 央视高清频道.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1676C30823CF08630084E1BD /* 央视高清频道.txt */; };
@@ -56,12 +56,10 @@
 /* Begin PBXFileReference section */
 		031BD79923CC9D0B00CB58F2 /* 酷TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "酷TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		031BD79C23CC9D0B00CB58F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		031BD79E23CC9D0B00CB58F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		031BD7A123CC9D0B00CB58F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		031BD7A323CC9D0F00CB58F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		031BD7A623CC9D0F00CB58F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		031BD7A823CC9D0F00CB58F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		163C2C7723CDA394007C94D0 /* SWChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWChannelCell.swift; sourceTree = "<group>"; };
 		163FCC9623CF0BE000D3647E /* HTTPHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHeaders.swift; sourceTree = "<group>"; };
 		163FCC9723CF0BE000D3647E /* AFError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
 		163FCC9823CF0BE000D3647E /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
@@ -95,8 +93,10 @@
 		163FCCB423CF0BE200D3647E /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		163FCCB523CF0BE200D3647E /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		163FCCB723CF0BE200D3647E /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
-		163FCCD923CF101900D3647E /* SWChannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWChannelModel.swift; sourceTree = "<group>"; };
-		164D376723CD86080088BDE4 /* SWAVPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAVPlayerViewController.swift; sourceTree = "<group>"; };
+		163FCCDE23D0025800D3647E /* SWAVPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWAVPlayerViewController.swift; sourceTree = "<group>"; };
+		163FCCDF23D0025800D3647E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		163FCCE223D0026200D3647E /* SWChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWChannelCell.swift; sourceTree = "<group>"; };
+		163FCCE423D0026C00D3647E /* SWChannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWChannelModel.swift; sourceTree = "<group>"; };
 		1676C30623CF08630084E1BD /* 虎牙影视轮播.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "虎牙影视轮播.txt"; sourceTree = "<group>"; };
 		1676C30723CF08630084E1BD /* 卫视高清频道.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "卫视高清频道.txt"; sourceTree = "<group>"; };
 		1676C30823CF08630084E1BD /* 央视高清频道.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "央视高清频道.txt"; sourceTree = "<group>"; };
@@ -134,10 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				031BD79C23CC9D0B00CB58F2 /* AppDelegate.swift */,
-				031BD79E23CC9D0B00CB58F2 /* ViewController.swift */,
-				163FCCD923CF101900D3647E /* SWChannelModel.swift */,
-				163C2C7723CDA394007C94D0 /* SWChannelCell.swift */,
-				164D376723CD86080088BDE4 /* SWAVPlayerViewController.swift */,
+				163FCCDD23D0022500D3647E /* Controller */,
+				163FCCDB23D0022500D3647E /* Model */,
+				163FCCDC23D0022500D3647E /* View */,
 				163FCC7323CF0AA300D3647E /* Alamofire */,
 				031BD7A023CC9D0B00CB58F2 /* Main.storyboard */,
 				031BD7A323CC9D0F00CB58F2 /* Assets.xcassets */,
@@ -197,6 +196,31 @@
 				163FCCB323CF0BE200D3647E /* Validation.swift */,
 			);
 			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		163FCCDB23D0022500D3647E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				163FCCE423D0026C00D3647E /* SWChannelModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		163FCCDC23D0022500D3647E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				163FCCE223D0026200D3647E /* SWChannelCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		163FCCDD23D0022500D3647E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				163FCCDE23D0025800D3647E /* SWAVPlayerViewController.swift */,
+				163FCCDF23D0025800D3647E /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +298,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				031BD79F23CC9D0B00CB58F2 /* ViewController.swift in Sources */,
 				163FCCD023CF0BE200D3647E /* AlamofireExtended.swift in Sources */,
 				163FCCC623CF0BE200D3647E /* Result+Alamofire.swift in Sources */,
 				163FCCC023CF0BE200D3647E /* Request.swift in Sources */,
@@ -284,24 +307,25 @@
 				163FCCBB23CF0BE200D3647E /* URLConvertible+URLRequestConvertible.swift in Sources */,
 				163FCCCF23CF0BE200D3647E /* URLEncodedFormEncoder.swift in Sources */,
 				163FCCC823CF0BE200D3647E /* SessionDelegate.swift in Sources */,
-				163C2C7823CDA394007C94D0 /* SWChannelCell.swift in Sources */,
 				163FCCBA23CF0BE200D3647E /* MultipartFormData.swift in Sources */,
 				163FCCB823CF0BE200D3647E /* HTTPHeaders.swift in Sources */,
 				163FCCD423CF0BE200D3647E /* Validation.swift in Sources */,
 				163FCCD123CF0BE200D3647E /* ResponseSerialization.swift in Sources */,
 				163FCCCC23CF0BE200D3647E /* EventMonitor.swift in Sources */,
-				164D376823CD86080088BDE4 /* SWAVPlayerViewController.swift in Sources */,
 				163FCCC923CF0BE200D3647E /* RequestInterceptor.swift in Sources */,
 				163FCCD523CF0BE200D3647E /* Session.swift in Sources */,
-				163FCCDA23CF101900D3647E /* SWChannelModel.swift in Sources */,
 				163FCCC123CF0BE200D3647E /* MultipartUpload.swift in Sources */,
 				163FCCD323CF0BE200D3647E /* RetryPolicy.swift in Sources */,
 				163FCCC223CF0BE200D3647E /* HTTPMethod.swift in Sources */,
+				163FCCE523D0026C00D3647E /* SWChannelModel.swift in Sources */,
 				163FCCCD23CF0BE200D3647E /* Alamofire.swift in Sources */,
 				163FCCCE23CF0BE200D3647E /* CachedResponseHandler.swift in Sources */,
+				163FCCE323D0026200D3647E /* SWChannelCell.swift in Sources */,
 				163FCCD223CF0BE200D3647E /* Protector.swift in Sources */,
+				163FCCE023D0025800D3647E /* SWAVPlayerViewController.swift in Sources */,
 				163FCCCA23CF0BE200D3647E /* ParameterEncoder.swift in Sources */,
 				163FCCC723CF0BE200D3647E /* DispatchQueue+Alamofire.swift in Sources */,
+				163FCCE123D0025800D3647E /* ViewController.swift in Sources */,
 				163FCCBF23CF0BE200D3647E /* ParameterEncoding.swift in Sources */,
 				163FCCD823CF0BE200D3647E /* URLSessionConfiguration+Alamofire.swift in Sources */,
 				163FCCC523CF0BE200D3647E /* Notifications.swift in Sources */,
