@@ -17,12 +17,15 @@ class ViewController: UIViewController {
     var didSelectRow = 0
     var channels: [SWChannelModel] = []
     
+    let responseJsonKey = "responseJson"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setupLoadData()
+        loadLocalData()
+        loadNetworkResources()
     }
-
+    
     func play(url: URL) {
         let item = AVPlayerItem.init(url: url)
         let avPlayerViewController = SWAVPlayerViewController()
@@ -39,48 +42,50 @@ class ViewController: UIViewController {
         alertController.show(self, sender: nil)
     }
     
-    func setupLoadData() {
-        setupLoadLocalData()
+    func loadNetworkResources() {
         AF.request("http://106.54.209.203:8080/").responseJSON { response in
             switch response.result {
             case .success:
-                if let dict: [String: String] = response.value as? [String : String] {
+                if let data = response.data {
                     self.channels.removeAll()
-                    var temp: [String] = []
-                    for key in dict.keys {
-                        temp.append(key)
-                    }
-                    let keys = temp.sorted(by: <)
-                    for key in keys {
-                        if let content: String = dict[key] {
-                            self.formatxx(title: key, content: content)
-                        }
+                    let json = String.init(data: data, encoding: .utf8)
+                    if let models = [SWChannelModel].deserialize(from: json) {
+                        self.channels = models as! [SWChannelModel]
                     }
                     self.tableView.reloadData()
+                    UserDefaults.standard.set(json, forKey: self.responseJsonKey)
                 }
             case let .failure(error):
                 debugPrint(error)
             }
         }
     }
-
-    func setupLoadLocalData() {
-        self.channels.removeAll()
-        let resources = ["央视高清频道", "卫视高清频道", "虎牙影视轮播", "爱奇艺影视轮播"]
-        for resource in resources {
-            let path = Bundle.main.path(forResource: resource, ofType: "txt")
-            let url = URL(fileURLWithPath: path!)
-            do {
-                let content = try NSString.init(contentsOf: url, encoding: String.Encoding.utf8.rawValue)
-                self.formatxx(title: resource, content: content as String)
-            } catch _ {
-                showAlert(title: "", message: "读取数据时出现错误")
+    
+    func loadLocalData() {
+        if let json = UserDefaults.standard.string(forKey: responseJsonKey) {
+            if let models = [SWChannelModel].deserialize(from: json) {
+                self.channels = models as! [SWChannelModel]
             }
+        } else {
+            let resources = ["央视高清频道", "卫视高清频道", "虎牙影视轮播", "爱奇艺影视轮播"]
+            var models: [SWChannelModel] = []
+            for resource in resources {
+                let path = Bundle.main.path(forResource: resource, ofType: "txt")
+                let url = URL(fileURLWithPath: path!)
+                do {
+                    let content = try NSString.init(contentsOf: url, encoding: String.Encoding.utf8.rawValue)
+                    let channelModel = resolve(title: resource, content: content as String)
+                    models.append(channelModel)
+                } catch _ {
+                    
+                }
+            }
+            self.channels = models
         }
         self.tableView.reloadData()
     }
     
-    func formatxx(title: String, content: String) {
+    func resolve(title: String, content: String)  -> SWChannelModel {
         let channelModel = SWChannelModel()
         channelModel.title = title
         let array = content.components(separatedBy: "\n")
@@ -120,20 +125,20 @@ class ViewController: UIViewController {
             subChannelModels.append(subChannelModel)
         }
         channelModel.subChannels = subChannelModels
-        self.channels.append(channelModel)
+        return channelModel
     }
     
-//    func checkActivate() {
-//        let installKey = "install_date"
-//        let i = UserDefaults.standard.double(forKey: installKey)
-//        if i > 0 {
-//            let now = Date().timeIntervalSince1970
-//            print(now - i)
-//        } else {
-//            let installdate = Date().timeIntervalSince1970
-//            UserDefaults.standard.set(installdate, forKey: installKey)
-//        }
-//    }
+    //    func checkActivate() {
+    //        let installKey = "install_date"
+    //        let i = UserDefaults.standard.double(forKey: installKey)
+    //        if i > 0 {
+    //            let now = Date().timeIntervalSince1970
+    //            print(now - i)
+    //        } else {
+    //            let installdate = Date().timeIntervalSince1970
+    //            UserDefaults.standard.set(installdate, forKey: installKey)
+    //        }
+    //    }
 }
 
 
@@ -240,6 +245,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
 }
+
 
 
 

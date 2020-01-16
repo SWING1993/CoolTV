@@ -7,18 +7,20 @@
 //
 
 import UIKit
-
-class SWChannelModel: NSObject {
+ 
+class SWChannelModel: HandyJSON {
     
     var title = ""
     var subChannels: [SWSubChannelModel] = []
-
+    
+    required init() {}
 }
 
 
-class SWSubChannelModel: NSObject {
+class SWSubChannelModel: HandyJSON {
     
     var name = ""
     var url = ""
 
+    required init() {}
 }
