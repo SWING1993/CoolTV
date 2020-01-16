@@ -14,15 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var activate = 0
-
     var didSelectRow = 0
     var channels: [SWChannelModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        checkActivate()
         setupLoadData()
     }
 
@@ -48,82 +45,96 @@ class ViewController: UIViewController {
             switch response.result {
             case .success:
                 if let dict: [String: String] = response.value as? [String : String] {
-                    debugPrint(dict.keys)
+                    self.channels.removeAll()
+                    var temp: [String] = []
+                    for key in dict.keys {
+                        temp.append(key)
+                    }
+                    let keys = temp.sorted(by: <)
+                    for key in keys {
+                        if let content: String = dict[key] {
+                            self.formatxx(title: key, content: content)
+                        }
+                    }
+                    self.tableView.reloadData()
                 }
             case let .failure(error):
                 debugPrint(error)
             }
         }
     }
-    
+
     func setupLoadLocalData() {
         self.channels.removeAll()
         let resources = ["央视高清频道", "卫视高清频道", "虎牙影视轮播", "爱奇艺影视轮播"]
         for resource in resources {
-            let channelModel = SWChannelModel()
-            channelModel.title = resource
             let path = Bundle.main.path(forResource: resource, ofType: "txt")
             let url = URL(fileURLWithPath: path!)
             do {
                 let content = try NSString.init(contentsOf: url, encoding: String.Encoding.utf8.rawValue)
-                let array = content.components(separatedBy: "\n")
-                var titles: [String] = []
-                var urlStrings: [String] = []
-                for str in array {
-                    if str.contains(",") {
-                        let item = str.components(separatedBy: ",")
-                        if let title = item.first {
-                            titles.append(title)
-                        }
-                        if let url = item.last {
-                            urlStrings.append(url)
-                        }
-                    }
-                }
-
-                var channelNames: [String] = []
-                var channelDataSourcce: [String: String] = [:]
-                for index in 0 ..< urlStrings.count {
-                    let title = titles[index]
-                    let urlString = urlStrings[index]
-                    channelDataSourcce[title] = urlString
-
-                }
-                var names: [String] = []
-                for key in channelDataSourcce.keys {
-                    names.append(key)
-                }
-                channelNames = names.sorted(by: <)
-                
-                var subChannelModels: [SWSubChannelModel] = []
-                for name in channelNames {
-                    let subChannelModel = SWSubChannelModel()
-                    subChannelModel.name = name
-                    if let url = channelDataSourcce[name] {
-                        subChannelModel.url = url
-                    }
-                    subChannelModels.append(subChannelModel)
-                }
-                channelModel.subChannels = subChannelModels
+                self.formatxx(title: resource, content: content as String)
             } catch _ {
                 showAlert(title: "", message: "读取数据时出现错误")
             }
-            self.channels.append(channelModel)
         }
         self.tableView.reloadData()
     }
     
-    func checkActivate() {
-        let installKey = "install_date"
-        let i = UserDefaults.standard.double(forKey: installKey)
-        if i > 0 {
-            let now = Date().timeIntervalSince1970
-            print(now - i)
-        } else {
-            let installdate = Date().timeIntervalSince1970
-            UserDefaults.standard.set(installdate, forKey: installKey)
+    
+    func formatxx(title: String, content: String) {
+        let channelModel = SWChannelModel()
+        channelModel.title = title
+        let array = content.components(separatedBy: "\n")
+        var titles: [String] = []
+        var urlStrings: [String] = []
+        for str in array {
+            if str.contains(",") {
+                let item = str.components(separatedBy: ",")
+                if let title = item.first {
+                    titles.append(title)
+                }
+                if let url = item.last {
+                    urlStrings.append(url)
+                }
+            }
         }
+        var channelNames: [String] = []
+        var channelDataSourcce: [String: String] = [:]
+        for index in 0 ..< urlStrings.count {
+            let title = titles[index]
+            let urlString = urlStrings[index]
+            channelDataSourcce[title] = urlString
+        }
+        var names: [String] = []
+        for key in channelDataSourcce.keys {
+            names.append(key)
+        }
+        channelNames = names.sorted(by: <)
+        
+        var subChannelModels: [SWSubChannelModel] = []
+        for name in channelNames {
+            let subChannelModel = SWSubChannelModel()
+            subChannelModel.name = name
+            if let url = channelDataSourcce[name] {
+                subChannelModel.url = url
+            }
+            subChannelModels.append(subChannelModel)
+        }
+        channelModel.subChannels = subChannelModels
+        self.channels.append(channelModel)
     }
+    
+//    func checkActivate() {
+//        let installKey = "install_date"
+//        let i = UserDefaults.standard.double(forKey: installKey)
+//        if i > 0 {
+//            let now = Date().timeIntervalSince1970
+//            print(now - i)
+//        } else {
+//            let installdate = Date().timeIntervalSince1970
+//            UserDefaults.standard.set(installdate, forKey: installKey)
+//        }
+//    }
 }
 
 
@@ -230,3 +241,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
 }
+
+
+
